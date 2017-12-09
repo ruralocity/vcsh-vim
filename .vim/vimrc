@@ -1,0 +1,41 @@
+colorscheme Tomorrow-Night
+
+syntax enable " enable syntax processing
+
+set tabstop=2 " number of visual spaces per tab
+set softtabstop=2 " number of spaces in tab when editing
+set expandtab " tabs are spaces
+set shiftwidth=2 " number of columns to shift when reindenting
+set autoindent " copy indent from previous line when starting a newline
+set smartindent " do smart indenting when starting a new line
+set backspace=indent,eol,start  " backspace through everything in insert mode
+
+set number " show line numbers
+set showcmd " show command in bottom bar
+set cursorline " highlight current line
+
+filetype indent on " load filetype-specific indent files
+
+set wildmenu " visual autocomplete for command menu
+set lazyredraw " redraw only when needed
+
+set showmatch " highlight matching bracket
+
+set textwidth=76 " wrap at 76 chars
+set wrapmargin=0
+
+" leader
+
+let mapleader="," " leader is comma
+inoremap jk <esc> " jk is escape
+nnoremap <header>u :GundoToggle<CR>
+" TODO: remap esc from visual mode
+
+" search
+
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
+nnoremap <leader><space> :nohlsearch<CR> " turn off search highlight
+
+" auto-formatting for git commit messages
+autocmd Filetype gitcommit setlocal spell textwidth=72
